@@ -2,12 +2,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-	<bean id = "knight" class = "com.daumsoft.ex1.BraveKnight">
-		<constructor-arg ref="quest"/>
-	</bean>
-	<bean id = "quest" class = "com.daumsoft.ex1.SlayDragonQuest">
-		<constructor-arg  value="#{T(System).out}"/>
-	</bean>
-	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean id = "room" class = "com.daumsoft.di.BlackRoom">
 	
+	</bean>
+	<bean id = "House2" class = "com.daumsoft.di.House2">
+		<property name="room" ref="room"></property>
+	</bean>
 </beans>
